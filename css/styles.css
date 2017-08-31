@@ -58,6 +58,10 @@ body{
 	font-size: 18px;
 }
 
+.caption > p{
+	height: 100px;
+}
+
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover{
 	background: #e7480f;
 }
