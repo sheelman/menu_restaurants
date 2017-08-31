@@ -44,25 +44,25 @@
 		}
 		else
 		{
-			$isUploadSuccess = ture;
+			$isUploadSuccess = true;
 			if($imageExtension != "jpg" && $imageExtension != "png" && $imageExtension != "jpeg" && $imageExtension != "gif")
 			{
 				$imageError = "Les fichiers autorises sont: .jpg, .jpeg, .png, .gif";
 				$isUploadSuccess = false;
 			}
-			if(fille_exists($imagePath))
+			if(file_exists($imagePath))
 			{
 				$imageError = "Le fichier existe deja";
 				$isUploadSuccess = false;
 			}
-			if($FILES["image"]["size"] > 500000)
+			if($_FILES["image"]["size"] > 500000)
 			{
 				$imageError = "Le fichier ne doit pas depasser les 500KB";
 				$isUploadSuccess = false;
 			}
 			if($isUploadSuccess)
 			{
-				if(!move-uploaded_fille($FILES["image"]["tmp_name"], $imagePath))
+				if(!move_uploaded_file($_FILES["image"]["tmp_name"], $imagePath))
 				{
 					$imageError = "Il y a une erreur lors de l'upload";
 					$isUploadSucces = false;
